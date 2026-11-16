@@ -1,76 +1,354 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#075b45">
+<meta name="theme-color" content="#0056a6">
 <title>Donate | Kayunga Community Service Week</title>
+
 <style>
-:root{--green:#075b45;--dark:#063b30;--gold:#f4bd35;--ink:#18251f;--muted:#64736b}
-*{box-sizing:border-box}
-body{margin:0;min-height:100vh;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:linear-gradient(145deg,#edf5ef,#fff8e8);display:flex;flex-direction:column}
-header{background:var(--dark);color:#fff;padding:20px 6%;text-align:center}
-.brand{font-weight:800;letter-spacing:1.1px;font-size:15px}
-.brand span{color:var(--gold)}
-main{width:min(680px,calc(100% - 32px));margin:42px auto;flex:1}
-.card{background:#fff;border:1px solid #e5ece6;border-radius:24px;padding:clamp(24px,5vw,42px);text-align:center;box-shadow:0 18px 55px rgba(8,57,39,.10)}
-.heart{width:66px;height:66px;margin:0 auto 18px;border-radius:50%;display:grid;place-items:center;background:#fff1d1;color:#a36a00;font-size:31px}
-.kicker{color:var(--green);font-size:12px;font-weight:800;letter-spacing:1.7px;text-transform:uppercase}
-h1{color:var(--dark);font-size:clamp(30px,6vw,43px);line-height:1.08;margin:10px 0 14px}
-.intro{font-size:16px;line-height:1.65;color:var(--muted);max-width:510px;margin:0 auto}
-.rule{height:1px;background:#edf0ed;margin:26px 0}
-.payment-label{font-size:13px;font-weight:800;letter-spacing:1px;color:var(--muted);text-transform:uppercase}
-.network{display:inline-flex;align-items:center;gap:9px;margin:14px 0 8px;background:#fff0f0;color:#c51e32;padding:9px 15px;border-radius:30px;font-weight:800}
-.network-mark{width:12px;height:12px;border-radius:50%;background:#e32037}
-.number{font-size:clamp(31px,7vw,43px);font-weight:800;letter-spacing:1px;color:var(--dark);margin:8px 0 15px;font-variant-numeric:tabular-nums}
-.copy{border:0;border-radius:12px;background:var(--green);color:#fff;font-size:15px;font-weight:800;padding:14px 24px;cursor:pointer}
-.copy:hover{background:var(--dark)}
-.instructions{margin:23px auto 0;text-align:left;max-width:440px;background:#f5f8f5;border-radius:14px;padding:17px 19px;color:#46564d;font-size:14px;line-height:1.65}
-.instructions strong{color:var(--dark)}
-.thanks{margin:24px 0 0;color:var(--green);font-weight:700;font-size:15px}
-#copied{min-height:20px;margin-top:9px;font-size:13px;color:var(--green)}
-footer{text-align:center;color:#758078;font-size:12px;padding:20px}
-@media(max-width:480px){main{margin:24px auto}.card{border-radius:18px}}
+:root {
+  --blue: #0056a6;
+  --gold: #ffcc00;
+  --red: #e63946;
+  --dark: #252a30;
+  --ink: #263442;
+  --muted: #64748b;
+  --light: #f3f7fb;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: linear-gradient(145deg,#edf4fb,#fff9e6);
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: var(--blue);
+  color: white;
+  padding: 22px 6%;
+  text-align: center;
+  border-bottom: 5px solid var(--gold);
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  font-size: 17px;
+}
+
+.brand span { color: var(--gold); }
+
+main {
+  width: min(680px,calc(100% - 32px));
+  margin: 38px auto;
+  flex: 1;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e2eaf2;
+  border-radius: 22px;
+  padding: clamp(24px,5vw,42px);
+  text-align: center;
+  box-shadow: 0 18px 55px rgba(0,50,100,.10);
+}
+
+.heart {
+  width: 66px;
+  height: 66px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #fff5cc;
+  color: var(--blue);
+  font-size: 31px;
+}
+
+.kicker {
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+}
+
+h1 {
+  color: var(--blue);
+  font-size: clamp(29px,6vw,42px);
+  line-height: 1.1;
+  margin: 12px 0;
+}
+
+.intro {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--muted);
+  max-width: 510px;
+  margin: 0 auto;
+}
+
+.rule {
+  height: 1px;
+  background: #e8edf2;
+  margin: 26px 0;
+}
+
+.payment-label {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.recipient {
+  background: #f2f7fc;
+  border: 1px solid #dce8f5;
+  border-radius: 14px;
+  padding: 16px;
+  margin: 18px 0;
+}
+
+.recipient strong {
+  display: block;
+  color: var(--blue);
+  font-size: 19px;
+  margin-bottom: 5px;
+}
+
+.recipient span {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.networks {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 18px 0;
+}
+
+.network {
+  padding: 10px 17px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.airtel {
+  background: #fff0f0;
+  color: #d51f35;
+}
+
+.mtn {
+  background: #fff5ce;
+  color: #806000;
+}
+
+.number {
+  font-size: clamp(32px,7vw,43px);
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--blue);
+  margin: 10px 0 16px;
+  font-variant-numeric: tabular-nums;
+}
+
+.copy {
+  border: 0;
+  border-radius: 10px;
+  background: var(--blue);
+  color: white;
+  font-size: 15px;
+  font-weight: 800;
+  padding: 14px 24px;
+  cursor: pointer;
+}
+
+.copy:hover { background: #003e78; }
+
+.instructions {
+  margin: 20px auto 0;
+  text-align: left;
+  background: #f5f8fb;
+  border-radius: 14px;
+  padding: 19px;
+  color: #46566a;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.instructions h3 {
+  color: var(--blue);
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+.instructions ol {
+  padding-left: 20px;
+  margin: 8px 0;
+}
+
+.instructions li { margin-bottom: 5px; }
+
+.warning {
+  background: #fff8df;
+  border-left: 4px solid var(--gold);
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  line-height: 1.6;
+  margin-top: 18px;
+  text-align: left;
+}
+
+.thanks {
+  margin: 24px 0 0;
+  color: var(--blue);
+  font-weight: 800;
+  font-size: 15px;
+}
+
+#copied {
+  min-height: 20px;
+  margin-top: 9px;
+  font-size: 13px;
+  color: var(--blue);
+}
+
+footer {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  padding: 22px;
+  border-top: 4px solid var(--gold);
+}
+
+@media(max-width:480px) {
+  main { margin: 24px auto; }
+  .card { border-radius: 17px; }
+}
 </style>
 </head>
+
 <body>
-<header><div class="brand">KAYUNGA <span>COMMUNITY</span></div></header>
+
+<header>
+  <div class="brand">KAYUNGA <span>COMMUNITY</span>SERVICE</span>WEEK</span></div>
+  <div style="font-size:12px;margin-top:5px;">
+    
+  </div>
+</header>
+
 <main>
-  <section class="card">
-    <div class="heart" aria-hidden="true">♥</div>
-    <div class="kicker">Together, we can make a difference</div>
-    <h1>Support Kayunga Community Service Week</h1>
-    <p class="intro">Your generosity will help us support vulnerable members of our community. Every contribution, big or small, is deeply appreciated.</p>
+<section class="card">
+
+  <div class="heart" aria-hidden="true">♥</div>
+
+  <div class="kicker">Together, we can make a difference</div>
+
+  <h1>Small Acts of Kindness, Big Changes in Our Community.</h1>
+
+  <p class="intro">
+    Your generosity will help us support vulnerable members
+    of our community. Every contribution, big or small,
+    makes a difference.
+  </p>
+
+  <div class="rule"></div>
+
+  <div class="payment-label">Send your donation to</div>
+
+  <div class="recipient">
+    <strong>ISABIRYE KENNETH</strong>
+    <span>IT Officer – Kayunga Town Council</span>
+  </div>
+
+  <div class="networks">
+    <div class="network airtel">AIRTEL MONEY</div>
+    <div class="network mtn">MTN MOMO</div>
+  </div>
+
+  <div class="number" id="phoneNumber">0750858803</div>
+
+  <button class="copy" id="copyButton" type="button">
+    Copy Donation Number
+  </button>
+
+  <div id="copied" role="status" aria-live="polite"></div>
+
+  <div class="instructions">
+
+    <h3>Airtel Money – How to Donate</h3>
+    <ol>
+      <li>Open Airtel Money on your phone.</li>
+      <li>Select Send Money.</li>
+      <li>Enter <strong>0750858803</strong>.</li>
+      <li>Enter the amount you wish to contribute.</li>
+      <li>Verify the recipient details and confirm your transaction.</li>
+    </ol>
+
     <div class="rule"></div>
-    <div class="payment-label">Send your donation via</div>
-    <div class="network"><span class="network-mark"></span>Airtel Money</div>
-    <div class="number" id="phoneNumber">0750858803</div>
-    <button class="copy" id="copyButton" type="button">Copy Airtel Number</button>
-    <div id="copied" role="status" aria-live="polite"></div>
-    <div class="instructions">
-      <strong>How to donate</strong><br>
-      1. Open Airtel Money on your phone.<br>
-      2. Choose Send Money.<br>
-      3. Enter <strong>0750858803</strong> and the amount you wish to contribute.<br>
-      4. Before confirming, check that the recipient details are correct.
-    </div>
-    <p class="thanks">Thank you for giving hope and making an impact!</p>
-  </section>
+
+    <h3>MTN MoMo – How to Donate</h3>
+    <ol>
+      <li>Dial <strong>*165#</strong> or open MTN MoMo.</li>
+      <li>Select Send Money.</li>
+      <li>Choose Other Networks / Send to Other Network.</li>
+      <li>Select Airtel Uganda.</li>
+      <li>Enter <strong>0750858803</strong>.</li>
+      <li>Enter your donation amount.</li>
+      <li>Verify the recipient details and confirm using your PIN.</li>
+    </ol>
+
+  </div>
+
+  <div class="warning">
+    <strong>Important:</strong> Always verify the recipient's
+    name before confirming your transaction. If the recipient
+    details do not match, do not proceed.
+    MTN menu options may vary.
+  </div>
+
+  <p class="thanks">
+    Thank you for giving hope and making an impact!
+  </p>
+
+</section>
 </main>
-<footer>Kayunga Community Service Week · Every contribution counts</footer>
+
+<footer>
+  Kayunga Community Service Week<br>
+  Every Contribution Counts
+</footer>
+
 <script>
-const button=document.getElementById('copyButton');
-button.addEventListener('click',async()=>{
-  const number=document.getElementById('phoneNumber').textContent.trim();
-  const status=document.getElementById('copied');
-  try{
+const button = document.getElementById('copyButton');
+
+button.addEventListener('click', async () => {
+  const number = document.getElementById('phoneNumber').textContent.trim();
+  const status = document.getElementById('copied');
+
+  try {
     await navigator.clipboard.writeText(number);
-    status.textContent='Airtel number copied.';
-    button.textContent='Number Copied ✓';
-  }catch(e){
-    status.textContent='Please copy the number manually: '+number;
+    status.textContent = 'Donation number copied successfully.';
+    button.textContent = 'Number Copied ✓';
+  } catch (e) {
+    status.textContent = 'Please copy manually: ' + number;
   }
 });
 </script>
+
 </body>
 </html>
