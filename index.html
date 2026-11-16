@@ -25,7 +25,12 @@ body {
   min-height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
   color: var(--ink);
-  background: linear-gradient(145deg,#edf4fb,#fff9e6);
+  background:
+    linear-gradient(
+      rgba(255,255,255,0.82),
+      rgba(255,249,230,0.86)
+    ),
+    url("introduction.jpeg") center center / cover fixed;
   display: flex;
   flex-direction: column;
 }
@@ -53,7 +58,8 @@ main {
 }
 
 .card {
-  background: white;
+   background: rgba(255,255,255,0.94);
+  backdrop-filter: blur(3px);;
   border: 1px solid #e2eaf2;
   border-radius: 22px;
   padding: clamp(24px,5vw,42px);
